@@ -1,9 +1,14 @@
+using dotnetIdentityDemo.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<sampleDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("sampleDbContext") ?? throw new InvalidOperationException("Connection string 'sampleDbContext' not found.")));
 
+
+builder.Services.AddDbContext<SampleDbContext>(
+    options => {
+        options.UseMySql("server=localhost;database=test;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.28-mariadb"));
+    }
+);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
