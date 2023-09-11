@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj": {}
+    "c:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj": {
+    "c:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj",
+        "projectUniqueName": "c:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj",
         "projectName": "dotnetIdentityDemo",
-        "projectPath": "C:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj",
+        "projectPath": "c:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj",
         "packagesPath": "C:\\Users\\Elgie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\obj\\",
+        "outputPath": "c:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elgie\\AppData\\Roaming\\NuGet\\NuGet.Config",

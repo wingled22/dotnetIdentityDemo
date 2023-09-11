@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0lgqLEay4oPNkyl0/BEXFMzro3nLuIrMzFOjHjn2VFFbZU9eRWiylEpoANBilIlWY83Pdhf+Giy7pWbX7WoJfw==",
+  "dgSpecHash": "PkDegoRhvALztS009UKlvVnajkmQIc08hIF8mCeUr8wutx1DkMaWbKqUOqvOWTVqbUCd1kSJxRHGmwtRhuV3AA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj",
+  "projectFilePath": "c:\\Users\\Elgie\\Documents\\dev\\dotnetcore\\dotnetIdentityDemo\\dotnetIdentityDemo.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
