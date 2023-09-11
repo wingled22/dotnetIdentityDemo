@@ -1,0 +1,57 @@
+﻿Identity for asp.net 5.0
+install this packages First Microsoft.AspNetCore.Identity.EntityFrameworkCore and Microsoft.AspNetCore.Identity
+	1. Create a User class
+		public class AppUser : IdentityUser<int>
+        {
+            public Guid UserId { get; set; }
+            public string Firstname { get; set; }
+            public string MiddleName { get; set; }
+            public string LastName { get; set; }
+            public string Contact { get; set; }
+            public string Email { get; set; }
+            public string UserName { get; set; }
+            public string Password { get; set; }
+            public string UserType { get; set; }
+        }
+		
+    2. Create a Role Class
+        public class AppRole : IdentityRole<Guid>
+        {
+        }
+    
+    3. Add an Contextclass
+        public partial class SampleIdentityContext : SampleIdentityContext<AppUser, AppRole, Guid>
+        {
+            public WigglyContext(DbContextOptions<WigglyContext> options)
+                : base(options)
+            {
+            }
+        }
+
+    4. Inject this dependency to your Startup.cs
+        services.AddIdentity<User, Role>()
+                .AddEntityFrameworkStores<WigglyContext>();
+
+        sometime error happened 
+        add this code before the  AddIdentity
+        
+        builder.Services.AddDbContext<SampleIdentityContext>(options => 
+        options.UseMySql("server=localhost;database=sampleDb;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.21-mariadb")));
+
+
+    
+    5. then run this command on the nuget package manager console
+            Add-Migration CreateIdentitySchema
+        if using vscode or cmd 
+            dotnet ef migrations add InitialCreate or
+            dotnet ef migrations add idnttyinit --context SampleIdentityContext
+
+
+
+       if there is no err this will create the migration code to be publish in your database then 
+            update-database
+            dotnet ef database update
+            dotnet ef database update --context SampleIdentityContext   
+
+        when done check the database server if the code added aspnet tables to the database.
+        optional you can delete the migrations folder after

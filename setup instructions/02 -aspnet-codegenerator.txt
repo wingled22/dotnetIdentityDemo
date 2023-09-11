@@ -1,0 +1,22 @@
+Install this first on the cli
+	dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+and install this on the Nuget
+	Microsoft.VisualStudio.Web.CodeGeneration.Design
+and then build
+
+Create an area:
+	dotnet-aspnet-codegenerator area Farmer
+
+to codegenerate the controller with views
+	dotnet aspnet-codegenerator controller -name ProductController -m Product -dc testContext -outDir Controllers --useDefaultLayout --referenceScriptLibraries
+
+explanation: 
+
+	dotnet aspnet-cogenerator controller -name [ENTITY]Controller -m [ENTITY] -dc [YOUR-DB-CONTEXT] —outDir Controllers --useDefaultLayout --referenceScriptLibraries
+
+
+to make an API controller
+	dotnet aspnet-codegenerator controller -name [CUSTOM-NAME]Controller -actions -api —outDir Controllers
+
+	dotnet aspnet-codegenerator controller -name UnitOfMeasureController -m UnitOfMeasure -dc WigglyContext -outDir Areas/Admin/Controllers --useDefaultLayout --referenceScriptLibraries
+	dotnet aspnet-codegenerator controller -name UnitOfMeasureController -m UnitOfMeasure -dc WigglyContext -outDir Areas/Admin/Controllers --useDefaultLayout --referenceScriptLibraries
