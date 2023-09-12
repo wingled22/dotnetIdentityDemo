@@ -5,18 +5,25 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 
+// ////comment this one for the code gen to run
+builder.Services.AddDbContext<SampleIdentityContext>(
+    options => {
+        options.UseMySql("server=localhost;database=sampledb;user=root;password=;CharSet=utf8;SslMode=none;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.28-mariadb"));
+    }
+);
+// builder.Services.AddDbContext<SampleIdentityContext>(
+//     options => {
+//         options.UseMySql("server=localhost;database=sampledb;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.28-mariadb"));
+//     }
+// );
+
 builder.Services.AddDbContext<SampleDbContext>(
     options => {
         options.UseMySql("server=localhost;database=sampledb;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.28-mariadb"));
     }
 );
 
-////comment this one for the code gen to run
-// builder.Services.AddDbContext<SampleIdentityContext>(
-//     options => {
-//         options.UseMySql("server=localhost;database=sampledb;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.28-mariadb"));
-//     }
-// );
+
 
 builder.Services.AddIdentity<AppUser, AppRole>(option => {
         option.SignIn.RequireConfirmedAccount = false;
@@ -31,6 +38,7 @@ builder.Services.AddIdentity<AppUser, AppRole>(option => {
     })
     .AddEntityFrameworkStores<SampleIdentityContext>();
 
+builder.Services.AddSession();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -50,6 +58,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
+app.UseAuthorization();
 app.UseAuthorization();
 
 app.MapControllerRoute(
